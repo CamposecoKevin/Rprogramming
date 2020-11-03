@@ -1,0 +1,5 @@
+Estandares para el código en R.
+  1.Usar un editor de texto
+  2.Aplicar sangría
+  3. Limitar el tamaño de las funciones para legibilidad
+  
