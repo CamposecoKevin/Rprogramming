@@ -1,0 +1,28 @@
+---
+title: "Proyecto Final"
+author: "CamposecoKevin"
+date: "17/9/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r cars}
+
+```
+
+
+Primera grafica para representar la evolución del precio del aguacate desde el año 2000 hasta 2020
+segmentado en meses
+
+```{r pressure, echo=FALSE}
+aguacate1<-read.csv("C:/Users/Kevin Camposeco/Downloads/DescAguacate.csv")
+serie1<- ts(aguacate1$Precio)
+plot.ts(serie1, main="Evoluación del Precio de Aguacate", xlab="periodos", ylab= "precio")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

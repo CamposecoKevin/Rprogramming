@@ -1,0 +1,110 @@
+---
+title: "INFORME: PROYECCION DEL PRECIO DEL AGUACATE"
+author: "Camposeco Kevin"
+output: beamer_presentation
+---
+
+
+```{r, echo=FALSE}
+library(readxl)
+
+```
+
+```{r,echo=FALSE}
+library(readxl)
+library(printr)
+```
+## PREGUNTA
++ ¿Cómo estará el Precio del Aguacate el Próximo Año?
+
+
++ fuente: <www.simmagro.sieca.int/public/#/home>
+
+
+
+## Métodos
+![]("C:/Users/Kevin Camposeco/Downloads/base.png")
+
+
+## Gráfica exploratorio
+Evolución del precio de aguacate en los años 2000 hasta 2020
+```{r cars , echo = FALSE}
+aguacate1<-read.csv("C:/Users/Kevin Camposeco/Downloads/DescAguacate.csv")
+serie1<- ts(aguacate1$Precio)
+dim(aguacate1)
+plot.ts(serie1, main="Evoluación del Precio de Aguacate", xlab="periodos", ylab= "precio")
+```
+
+## Ciclo 2000 - 2021
+![]("C:/Users/Kevin Camposeco/Downloads/Imagen1ciclo2000.png")
+
+## Resultado 2000 - 2021
+![]("C:/Users/Kevin Camposeco/Downloads/Imagen22000.png")
+
+
+## Gráfica exploratorio
+Evolución del precio de aguacate en los años 2013 hasta 2020
+```{r cars, echo = FALSE}
+aguacate2<- read_xlsx("C:/Users/Kevin Camposeco/Downloads/Aguacate2013_2020.xlsx")
+dim(aguacate2)
+serie2<- ts(aguacate2$Precio_Aguacate)
+plot.ts(serie2, main="Evolución del Precio de Aguacate 2013:2020", xlab="Periodos", ylab= "precio")
+```
+
+
+## ciclo 2013 - 2021
+![]("C:/Users/Kevin Camposeco/Downloads/Imagen2013.png")
+
+## Proyección 2013 - 2021
+![]("C:/Users/Kevin Camposeco/Downloads/Imagen42013.png")
+
+
+## Resultado de predicción
+![](""C:/Users/Kevin Camposeco/Downloads/Imagen1.png"")
+
+## Resultados
++ Método Ingenuo
++ Método Promedio Movil
+```{r, echo=FALSE}
+tabla1<-read.csv("C:/Users/Kevin Camposeco/Downloads/datos.csv")
+head(tabla1)
+```
+
+## Resultados
++ Método Simple
++ Método holt
++ Método TRA
++ Método Winter
+```{r, echo=FALSE}
+tabla2<-read_xlsx("C:/Users/Kevin Camposeco/Downloads/datos1.xlsx")
+head(tabla2)
+```
+## Resultados
++ Desestacionalización 2000-2020
++ Desestacionalización 2013-2020
+```{r, echo=FALSE}
+tabla3<-read_xlsx("C:/Users/Kevin Camposeco/Downloads/datos2.xlsx")
+head(tabla3)
+```
+
+
+## Gráfico Ingenuo
+![]("C:/Users/Kevin Camposeco/Downloads/ingenuo.png")
+
+## Gráfico Promedio Movil
+![]("C:/Users/Kevin Camposeco/Downloads/promedio.png")
+
+## Gráfico Suavizamiento simple
+![]("C:/Users/Kevin Camposeco/Downloads/SIMPLE.png")
+
+## HOLT
+![]("C:/Users/Kevin Camposeco/Downloads/Holt.png")
+
+## Tasa de Respuesta Adaptativa
+![]("C:/Users/Kevin Camposeco/Downloads/TRA.png")
+
+## WINTER
+![]("C:/Users/Kevin Camposeco/Downloads/winter.png")
+
+
+

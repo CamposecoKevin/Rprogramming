@@ -1,0 +1,12 @@
+Pasos en el DATA SCIENCEE
+
+1. IMPORTAR LOS DATOS
+    En formao csv, o xml, o desde una base da datos azure, sql, aws.
+2. LIMPIAR LOS DATOS
+    Lo que se hara es hacer información util, donde las columnas son indicadores, y cada fila una observación
+    En los primeros 2 pasos se lleva un 80%
+3. TRANSFORMAR LOS DATOS
+4. VISUALIZAR LOS DATS
+5. MODELAR LOS DATS
+6. COMUNICAR LOS DATOS
+

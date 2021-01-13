@@ -1,5 +1,26 @@
-Estandares para el código en R.
+NOTAS DE LAS SEGUNDA SEMANA 
+
+A. Estandares para el código en R.
+
   1.Usar un editor de texto
   2.Aplicar sangría
   3. Limitar el tamaño de las funciones para legibilidad
+    
+B Markdown
+  1.Es un lenguaje de marcado, incluido en Rstudio, te permite trabajar directamente en el para 
+  realizar informes en diferentes formatos. Tambien se puede escribir para uso en la web.
+  
+  2. https://guides.github.com/features/mastering-markdown/
+  Visitar esta pagina, para ver un poco la sintaxis de Rmarkdown
+  
+
+c R_markdown
+  Markdown es un tipo de lenguaje de marcado muy simple, una especie de juego, un juego con el lenguaje de      marcado de palabras. 
+  
+D Knirt
+  Lenguaje de documentación y un lenguaje de programación.
+  
+  
+  
+
   

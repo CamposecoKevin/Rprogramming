@@ -3,6 +3,7 @@ install.packages("quantmod")
 library(quantmod)
 library(TTR)
 library(zoo)
+library(ggplot2)
 
 
 #descargar datos todos

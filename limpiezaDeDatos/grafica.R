@@ -1,3 +1,12 @@
+#Pasos para gráficar en R
+
+
+
+
+
+
+
+
 ggplot(data = ipc,
        mapping = aes(x = X,
                      y = Transporte))+
