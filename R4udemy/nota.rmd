@@ -10,3 +10,8 @@ Pasos en el DATA SCIENCEE
 5. MODELAR LOS DATS
 6. COMUNICAR LOS DATOS
 
+
+TIPS
+1. dput(aqui el nombre de data set): con esta función te permite exportar todos los datos como código
+
+
