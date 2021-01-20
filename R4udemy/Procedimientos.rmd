@@ -1,0 +1,8 @@
+1. visualización
+
+En analisis de datos, es primordial dar respuestas a preguntas de interés.
+
+¿los coches con motor más grandes consumen mas combustible que los pequeños?
+
+
+
