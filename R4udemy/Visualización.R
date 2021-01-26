@@ -79,3 +79,51 @@ ggplot(data=mpg)+
   geom_point(mapping = aes(x=displ, y = hwy) , shape = 23, size = 10,color = "green" , fill = "pink")
 
 
+
+#tareas ggplot 2
+
+##Preguntas de esta tarea
+
+#Toma el siguiente fragmento de código y di qué está mal. 
+#¿Por qué no aparecen pintados los puntos de color verde?
+  
+  ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = "green"))
+
+
+
+#Toma el dataset de mpg anterior y di qué variables son categóricas.
+str(mpg)  
+
+#Toma el dataset de mpg anterior y di qué variables son contínuas.
+
+#Dibuja las variables contínuas con color, tamaño y forma respectivamente. 
+
+#¿En qué se diferencian las estéticas para variables contínuas y categóricas?
+  
+#  ¿Qué ocurre si haces un mapeo de la misma variable a múltiples estéticas?
+  
+#Vamos a conocer una estética nueva llamada stroke. ¿Qué hace? ¿Con qué formas funciona bien? 
+  
+#  ¿Qué ocurre si haces un mapeo de una estética a algo que no
+#  sea directamente el nombre de una variable 
+#(por ejemplo aes(color = displ < 4))?
+
+
+
+
+ggplot(data=mpg)+
+  geom_point(mapping = aes(x=year) , shape = 23, size = 10,color = "green" , fill = "pink")
+
+
+
+
+
+
+
+
+
+
+
+
+
