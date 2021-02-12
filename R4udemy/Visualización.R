@@ -38,7 +38,92 @@ ggplot(data=mpg)+
 ggplot(data=mpg)+
   geom_density(mapping = aes(x= manufacturer, y = hwy))
 
+
 #con esto te muestra que contiene cada columna de la data y te muestra el tipo de datos.
 str(mpg)
+
+
+#Nivele estetica de acuerdo al tipo utilizando color,
+#en este ejmplo, identifica de acuerdo el itpo de auto
+
+ggplot(data=mpg)+
+  geom_point(mapping = aes(x=displ, y = hwy , color = class))
+
+
+
+#Utilizando la transparencia de los puntos
+
+ggplot(data=mpg)+
+  geom_point(mapping = aes(x=displ, y = hwy , alpha = class))
+
+#Forma de puntos dentro de un gráfico (solo permite 6 figuras)
+
+ggplot(data=mpg)+
+  geom_point(mapping = aes(x=displ, y = hwy , shape = class))
+
+
+
+#elección manual de los colores
+
+ggplot(data=mpg)+
+  geom_point(mapping = aes(x=displ, y = hwy) , color = "green")
+
+
+#Figura buscando cambiar la forma, 
+#shape es el tipo de forma
+#size el tamañao"
+#color el color
+#fill el relleno si asi está configura la figura que se establecera en shape
+
+ggplot(data=mpg)+
+  geom_point(mapping = aes(x=displ, y = hwy) , shape = 23, size = 10,color = "green" , fill = "pink")
+
+
+
+#tareas ggplot 2
+
+##Preguntas de esta tarea
+
+#Toma el siguiente fragmento de código y di qué está mal. 
+#¿Por qué no aparecen pintados los puntos de color verde?
+  
+  ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = "green"))
+
+
+
+#Toma el dataset de mpg anterior y di qué variables son categóricas.
+str(mpg)  
+
+#Toma el dataset de mpg anterior y di qué variables son contínuas.
+
+#Dibuja las variables contínuas con color, tamaño y forma respectivamente. 
+
+#¿En qué se diferencian las estéticas para variables contínuas y categóricas?
+  
+#  ¿Qué ocurre si haces un mapeo de la misma variable a múltiples estéticas?
+  
+#Vamos a conocer una estética nueva llamada stroke. ¿Qué hace? ¿Con qué formas funciona bien? 
+  
+#  ¿Qué ocurre si haces un mapeo de una estética a algo que no
+#  sea directamente el nombre de una variable 
+#(por ejemplo aes(color = displ < 4))?
+
+
+
+
+ggplot(data=mpg)+
+  geom_point(mapping = aes(x=year) , shape = 23, size = 10,color = "green" , fill = "pink")
+
+
+
+
+
+
+
+
+
+
+
 
 
