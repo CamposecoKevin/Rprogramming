@@ -33,8 +33,7 @@ summary(cars)
 ## Slide with Plot
 
 
-```{r pressure}
-library(ggplot2)
+```{r, echo=TRUE}
 plot(pressure)
 ```
 

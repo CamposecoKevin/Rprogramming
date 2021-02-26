@@ -110,20 +110,73 @@ str(mpg)
 #(por ejemplo aes(color = displ < 4))?
 
 
-
-
 ggplot(data=mpg)+
   geom_point(mapping = aes(x=year) , shape = 23, size = 10,color = "green" , fill = "pink")
 
+#Los facets
+
+#facet_wrap(<FORMULA_VARIABLE>) DEBE SER DISCRETA
+#EJEMPLO ~
+#Con este modelo podemos visualizar los gráficos de acuerdo a cada variable
+#del fenomeno a estudiar
+#PARA REALIZAR SEGMENTACIONES
+
+ggplot(data=mpg)+
+  geom_point(mapping = aes(x=displ, y = hwy)) +
+  facet_wrap(~class, nrow = 5)
+
+
+#face_grid(<FORMULAR VARIABLE1>~<FORMULAVARIABLE2>)
+
+ggplot(data=mpg)+
+  geom_point(mapping = aes(x=displ, y = hwy)) +
+  facet_grid(drv~cyl)
+
+
+#tarea no. 3
+
+#Preguntas de esta tarea
+#¿Qué ocurre si hacemos un facet de una variable contínua?
+  
+#  ¿Qué significa si alguna celda queda vacía en el gráfico facet_grid(drv~cyl)?
+  
+#  ¿Qué relación guardan esos huecos vacíos con el gráfico siguiente?
+  
+#  ggplot(data = mpg) +
+#  geom_point(mapping = aes(x=drv, y = cyl)) 
 
 
 
+#¿Qué gráficos generan las siguientes dos instrucciones? ¿Qué hace el punto? ¿Qué diferencias
+#hay de escribir la variable antes o después de la virgula?
+  
+#  ggplot(data = mpg) +
+ # geom_point(mapping = aes(x=displ, y = hwy)) +
+  #facet_grid(.~cyl)
 
+#ggplot(data = mpg) +
+ # geom_point(mapping = aes(x=displ, y = hwy)) +
+  #facet_grid(drv~.)
 
+#El primer facet que hemos pintado era el siguiente:
+  
+ # ggplot(data = mpg) +
+  #geom_point(mapping = aes(x = displ, y = hwy)) +
+  #facet_wrap(~class, nrow = 3)
 
-
-
-
+#¿Qué ventajas crees que tiene usar facets en lugar de la estética del color? 
+#¿Qué desventajas? ¿Qué cambiaría si tu dataset fuera mucho más grande?
+  
+ # Investiga la documentación de ?facet_wrap y contesta a las siguientes preguntas:
+  
+  #¿Qué hace el parámetro nrow?
+  #¿Y el parámetro ncol?
+  #¿Qué otras opciones sirven para controlar el layout de los paneles individuales?
+  #¿Por qué facet_grid() no tiene los parámetros de nrow ni de ncol?
+  #Razona la siguiente afirmación:
+  
+  #Cuando representemos un facet con facet_grid() conviene poner la variable con más 
+#niveles únicos en las columnas.
 
 
 
