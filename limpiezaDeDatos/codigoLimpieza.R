@@ -14,7 +14,7 @@ DesEm <-  read_xlsx("desempleo.xlsx")
 
 ## facilitar la lectur de los datos
 
-datos <- as_tibble(datos)
+datos <- as_tibble(DesEm)
 
 ## las dimensiones del documento
 

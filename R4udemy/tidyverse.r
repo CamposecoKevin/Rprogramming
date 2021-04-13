@@ -13,3 +13,34 @@
 #  x dplyr::lag()    masks stats::lag()
 
 #datos
+
+
+library(quantmod)
+
+#Tutorial Como importar datos de Yahoo Finance a RStudio
+
+mdate="2001-01-03"
+amazonprices=getSymbols('AMZ', from=mdate, auto.assign = F)
+
+print(amazonprices)
+
+#otro ejercicio
+mdate1="2001-01-04"
+amazonprices1=getSymbols('AMZ', from=mdate, auto.assign = F)[,4]
+print(amazonprices1)
+
+#Tasa de crecimiento
+amazonroc=ROC(amazonprices1, type='discret')
+print(amazonroc)
+
+#Tasa de Rendimiento
+
+amazonrend = periodReturn(amazonprices, period = 'monthly', type = 'log', subset = '2018')
+print(amazonrend)
+
+#Obtener datos de S P 500
+getSymbols("^GSPC", src = "yahoo", from = "2010-01-01", to = "2020-05-30", periodicity= "daily")
+print(GSPC)
+chartSeries(GSPC, TA=NULL)
+
+chartSeries(GSPC, subset ="last 3 months")
