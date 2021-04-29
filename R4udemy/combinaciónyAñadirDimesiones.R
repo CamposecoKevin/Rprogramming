@@ -77,6 +77,102 @@ ggplot(data = diamonds)+
   )
 
 
+#Gráfica de barras
+ggplot(data= diamonds)+
+  geom_bar(mapping = aes(x=cut, fill= color))
+
+
+view(diamonds)
+
+
+
+##positoin "FILL"
+ggplot(data= diamonds, mapping = aes(x=cut, fill = clarity))+
+  geom_bar(position = "fill")
+
+#positión "DODGE"
+
+ggplot(data= diamonds, mapping = aes(x=cut, fill = clarity))+
+  geom_bar(position = "dodge")
+
+
+
+#position "JITTER" para ver un ruido, y se pueda ver mejor la composición de los datos
+
+ggplot(data= mpg, mapping = aes(x=displ, y = hwy))+
+  geom_point(position = "jitter")
+
+
+ggplot(data= mpg, mapping = aes(x=displ, y = hwy))+
+  geom_jitter(  )
+
+
+
+
+#SISTEMAS DE COORDENADAS
+
+#coord_flip() -> cambia los papales de x e Y
+
+#Asi se vería normalmente
+ggplot(data = mpg, mapping = aes(x= class, y = hwy))+
+  geom_boxplot()
+
+#Asi se vería con la funcion volter de coord_flip()
+
+ggplot(data = mpg, mapping = aes(x= class, y = hwy))+
+  geom_boxplot()+
+  coord_flip()
+
+
+#representaciones en mapa
+
+install.packages("maps")
+
+?map_data
+
+usa<- map_data("usa")
+
+ggplot(usa, aes(long, lat, group=group))+
+  geom_polygon(fill= "blue", color="white")+
+  coord_quickmap()
+
+
+view(usa)
+
+#utilizando el coord_polar()
+
+ggplot(data= diamonds)+
+  geom_bar(
+    mapping = aes(x=cut, fill = cut),
+    show.legend = F,
+    width = 1
+  )+
+  theme(aspect.ratio = 1)+
+  labs(x=NULL, y = NULL)+
+  coord_polar()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
