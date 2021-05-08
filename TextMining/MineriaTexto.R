@@ -65,3 +65,53 @@ patterns<-c('good','also','text mining')
 replacements<-c('great','just as suitable','tm')
 mgsub(patterns,replacements,fake.text)
 ```
+
+
+
+df<-nube(tw$text)
+wordcloud2(tw$text,n,size = 500,shape = 'pentagon')
+
+wordcloud2(data = df$tw.text)
+
+wordcloud2(data = docs)
+
+
+??wordcloud
+
+df<-data.frame(tw$t)
+
+library(wordcloud2)
+library(wordcloud)
+
+datos<-demoFreq
+
+library(tm)
+
+#extración de inforamción de tw y luego sacar el Número de frecuencia.
+
+docs<-Corpus(VectorSource(tw$text))
+docs 
+
+docs <- docs %>%
+  tm_map(removeNumbers) %>%
+  tm_map(removePunctuation) %>%
+  tm_map(stripWhitespace)%>%
+  tm_map(removeWords,docs,stopwords("es"))
+
+
+docs <- tm_map(docs, content_transformer(tolower))
+
+docs <- tm_map(docs, removeWords, c(stopwords("sp"),"ahora") )
+
+dtm <- TermDocumentMatrix(docs) 
+
+matrix <- as.matrix(dtm) 
+
+words <- sort(rowSums(matrix),decreasing=TRUE) 
+df <- data.frame(word = names(words),freq=words)	
+wordcloud2(data = df[df$freq>10,],color = "random-dark",shape = "pentagon")
+
+summary(df)
+
+
+
