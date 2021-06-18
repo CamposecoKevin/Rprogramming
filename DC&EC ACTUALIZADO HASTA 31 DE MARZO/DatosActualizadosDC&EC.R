@@ -23,7 +23,7 @@ str(productores)
 str(portecnicos)
 
 #filtro por técnicos
-Ana<-filter(productores,tecnicoCampo =="Melser Leonel Orozco Orozco")
+tecnico<-filter(productores,Tecnico =="Hugo Hernandez")
 
 #guardar datos
-write.xlsx(Ana,"MelserOrozco.xlsx")
+write.xlsx(tecnico,"Hugo.xlsx")
