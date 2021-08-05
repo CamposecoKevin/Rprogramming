@@ -86,6 +86,8 @@ summarize(cran, avg_bytes = mean(size))
 ## utilizando group_by, es muy bueno para hacer filtros con una variable principal,
 ##Agrupe cran por la variable del paquete y almacene el resultado en un nuevo objeto llamado by_package.
 
+cran
+
 by_package<-group_by(cran, package)
 
 

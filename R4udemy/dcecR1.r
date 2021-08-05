@@ -1,5 +1,6 @@
 library(tidyverse)
 library(readxl)
+library(dplyr)
 
 #Establecer el directorio de trabajo
 setwd("C:/Users/KEVIN CAMPOSECO/Documents/Kevin_Proyecto/Rprogramming/R4udemy/")
@@ -13,6 +14,28 @@ View(DCEC)
 #RESUMEN DEL ARCHIVO
 summary(DCEC)
 
-#Para ver el tipo de cada columna
+#Para ver el tipo de cada columna para poder manejarlo
 tibble(DCEC)
+
+#Número de filas y columnas
+dim(DCEC)
+
+#Extracción de datos por grupo
+dcecgroup<-group_by(DCEC, DCEC$Tecnico)
+
+view(dcecgroup)
+
+#Te muestra el total del agrupado
+Grupos <- summarize(dcecgroup,
+                      Cantidad =  n())
+
+#Aqui ya tenemos tanto DC como EC
+agrupados<-DCEC %>%
+  group_by(DCEC$`Tipo de Evento`,DCEC$Tecnico) %>%
+  summarise(n = n())
+
+view(agrupados)
+
+
+
 
