@@ -34,6 +34,7 @@ agrupados<-DCEC %>%
   group_by(DCEC$`Tipo de Evento`,DCEC$Tecnico) %>%
   summarise(n = n())
 
+
 view(agrupados)
 
 
