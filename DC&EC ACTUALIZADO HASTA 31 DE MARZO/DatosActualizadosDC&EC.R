@@ -1,17 +1,29 @@
 
+#Arrancar librerias
+
+library(dplyr)
+library(tidyr) 
+library(readxl)
+library(openxlsx)
+library(writexl)
 
 
+productores<-read.xlsx("Listado de Eventos.xlsx")
 
-#Nuevo espacio de trabajo para analizar datos de DC&EC
-
-dir.create("DC&EC ACTUALIZADO HASTA 31 DE MARZO")
-
-
-#Pasar a nueva ubicación de espacio de trabajo
-setwd("DC&EC ACTUALIZADO HASTA 31 DE MARZO")
-dir()
-
-productores<-read.xlsx("Listado de EC y DC.xlsx")
-
-
+#vista general de datos
 View(productores)
+
+#culumans y filas
+dim(productores)
+
+#visualización de tipo de variable
+str(productores)
+
+#Visutalización de datos
+str(portecnicos)
+
+#filtro por técnicos
+tecnico<-filter(productores,Tecnico =="Hugo Hernandez")
+
+#guardar datos
+write.xlsx(tecnico,"Hugo.xlsx")
