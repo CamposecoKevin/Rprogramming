@@ -7,7 +7,7 @@ install.packages("nycflights13")
 nycflights13::flights
 
 
-
+View(flights)
 
 
 # 41 Filtrado de filas con FILTER --------------------------------------------
@@ -32,10 +32,12 @@ filter(ProductoresR1, Departamento %in% c("Huehuetenango","Quiché"))
 
 
 
+# 43 los NA o NULL --------------------------------------------------------
+#Na es la ausencia de datos.
+#df es la base de datos, en esta función buscamos hacer tambien cuente los NA
+#sin eliminar las filas de data set.
 
-
-
-
+filter(df, is.na(x)|x>2)
 
 
 
