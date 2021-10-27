@@ -65,6 +65,10 @@ arrange(flights, desc(arr_delay))
 # 45 filtrar columans con select ------------------------------------------
 
 
+select(flights, dep_time:arr_delay)
+
+
+
 
 # 47 calcular nuevas variables con MUTATE ---------------------------------
 
@@ -82,7 +86,7 @@ mutate(flights_new,
        flight_speed = distance/(air_time/60)
        )
 
-
+w
 
 
 
