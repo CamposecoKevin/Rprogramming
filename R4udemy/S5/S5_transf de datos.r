@@ -86,7 +86,34 @@ mutate(flights_new,
        flight_speed = distance/(air_time/60)
        )
 
-w
+
+
+
+# 48. Funciones utilies para mutar ñps datps ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
