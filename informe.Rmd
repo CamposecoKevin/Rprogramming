@@ -15,10 +15,10 @@ library(readxl)
 library(printr)
 ```
 ## PREGUNTA
-+ ¿Cómo estará el Precio del Aguacate el Próximo Año?
+¿Cómo estará el Precio del Aguacate el Próximo Año?
 
 
-+ fuente: <www.simmagro.sieca.int/public/#/home>
+fuente: <www.simmagro.sieca.int/public/#/home>
 
 
 
