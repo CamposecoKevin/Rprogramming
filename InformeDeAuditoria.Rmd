@@ -19,6 +19,27 @@ When you click the **Knit** button a document will be generated that includes bo
 summary(cars)
 ```
 
+
+```{r fig.align="center"}
+generate_heat_map <- function(correlationMatrix, title)
+{
+  heatmap.2(x = correlationMatrix,    
+            cellnote = correlationMatrix,   
+            main = title,           
+            symm = TRUE,            
+            dendrogram="none",      
+            Rowv = FALSE,           
+            trace="none",           
+            density.info="none",        
+            notecol="black")          
+}
+
+corr1 <- round(cor(portafolioreturns) * 100, 2)
+generate_heat_map(corr1,"Heatmap: Correlaciones")
+
+
+```
+
 ## Including Plots
 
 You can also embed plots, for example:
