@@ -1,4 +1,3 @@
-
 #Arrancar librerias
 
 library(dplyr)
@@ -6,7 +5,6 @@ library(tidyr)
 library(readxl)
 library(openxlsx)
 library(writexl)
-
 
 productores<-read.xlsx("Listado de Eventos.xlsx")
 
@@ -23,7 +21,11 @@ str(productores)
 str(portecnicos)
 
 #filtro por técnicos
-tecnico<-filter(productores,Tecnico =="Hugo Hernandez")
+tecnico<-filter(productores,Tecnico =="Issmar Federico Molina Noriega*")
 
 #guardar datos
-write.xlsx(tecnico,"Hugo.xlsx")
+write.xlsx(tecnico,"Issmar.xlsx")
+
+#Revisión de datos extraidos
+View(tecnico)
+
