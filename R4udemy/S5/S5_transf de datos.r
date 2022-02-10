@@ -89,8 +89,10 @@ mutate(flights_new,
 
 
 
-# 48. Funciones utilies para mutar ñps datps ------------------------------
+# 48. Funciones utilies para mutar lps datps ------------------------------
+  #operaciones aritmeticas : +,-,*,/,
 
+  
 
 
 
