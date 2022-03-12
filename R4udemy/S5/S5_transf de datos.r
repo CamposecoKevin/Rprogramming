@@ -1,13 +1,23 @@
-#utiliación de dplyr para transformación de datos.
 
+# Package ha utilizar -----------------------------------------------------
 library(tidyverse)
 library(nycflights13)
-install.packages("nycflights13")
-
-nycflights13::flights
-
-
+view(nycflights13)
 View(flights)
+
+
+
+
+# 39 Introducción de la transformación de los datos -----------------------
+
+
+
+# 40. Dplyr y su sintaxis -------------------------------------------------
+
+
+
+
+
 
 
 # 41 Filtrado de filas con FILTER --------------------------------------------
@@ -28,6 +38,8 @@ filter(ProductoresR1, Departamento =="Huehuetenango" | Departamento == "Quiché"
 
 #Utilizando %in% 
 filter(ProductoresR1, Departamento %in% c("Huehuetenango","Quiché"))
+
+
 
 
 
