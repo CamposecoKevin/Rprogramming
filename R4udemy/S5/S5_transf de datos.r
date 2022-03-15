@@ -9,6 +9,40 @@ View(flights)
 
 
 # 39 Introducción de la transformación de los datos -----------------------
+#Tibble es un data frame mejorado para su facil manipulación en tivyverse
+
+## int = número enteros
+## dlb = números reales
+## chr = vectores de caracteres
+## dttm = data + tiempo
+## lgl = logicos, valore booleanos
+## fctr = factores, variables categoricas
+## date = fecha 
+
+## filter = filtrar observaciones
+## arrange =  reordenar las filas
+## select = seleccionar variables por su nombres
+## mutate = crear nuevas variables con funciones con las que existe
+## summarise = copsar varios valores para dar un resumen
+## group_by = opera la función  a la que acompaña a grupo.
+
+
+
+
+# 40 Filtrado de filas -------------------------------------------------------
+
+#Filtrar solo eventos creados por el componente R1
+EventosR1<-filter(eventos, eventos$Programa=="General")
+
+#Frecuencia de numero de eventos por tecnico del componente R1
+EPorTec<-data.frame(table(EventosR1$Tecnico))
+
+# Filtrar por tecnico
+tecnico<-filter(eventos,Tecnico=="Antonio Cruz Ramírez")
+
+
+
+
 
 
 
@@ -26,7 +60,6 @@ HUE<- filter(ProductoresR1, ProductoresR1$Departamento == "Huehuetenango")
 QUI<- filter(ProductoresR1, ProductoresR1$Departamento == "Quiché")
 
 view(HUE)
-
 
 
 
