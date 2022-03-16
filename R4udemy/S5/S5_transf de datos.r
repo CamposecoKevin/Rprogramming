@@ -41,19 +41,6 @@ EPorTec<-data.frame(table(EventosR1$Tecnico))
 tecnico<-filter(eventos,Tecnico=="Antonio Cruz Ramírez")
 
 
-
-
-
-
-
-# 40. Dplyr y su sintaxis -------------------------------------------------
-
-
-
-
-
-
-
 # 41 Filtrado de filas con FILTER --------------------------------------------
 
 HUE<- filter(ProductoresR1, ProductoresR1$Departamento == "Huehuetenango")
@@ -65,14 +52,18 @@ view(HUE)
 
 # 42 Usando Bool en filtrado ----------------------------------------------
 
-# Utilizando el boleano "O"
-filter(ProductoresR1, Departamento =="Huehuetenango" | Departamento == "Quiché")
+  # Utilizando el boleano "O"
+  HQ<-filter(ProductoresR1, Departamento =="Huehuetenango" | Departamento == "Quiché")
+  
 
+  #Utilizando %in%  es más eficiente ya que se puede ingresar un todo.
+  filter(ProductoresR1, Departamento %in% c("Huehuetenango","Quiché"))
 
-#Utilizando %in% 
-filter(ProductoresR1, Departamento %in% c("Huehuetenango","Quiché"))
-
-
+  
+  View(HQ)
+  
+  
+  
 
 
 
