@@ -52,46 +52,61 @@ view(HUE)
 
 # 42 Usando Bool en filtrado ----------------------------------------------
 
-  # Utilizando el boleano "O"
+  # Utilizando el boleano "O", con una que esta correcta tomara como verdadero.
   HQ<-filter(ProductoresR1, Departamento =="Huehuetenango" | Departamento == "Quiché")
   
 
   #Utilizando %in%  es más eficiente ya que se puede ingresar un todo.
   filter(ProductoresR1, Departamento %in% c("Huehuetenango","Quiché"))
-
+  
   
   View(HQ)
   
-  
-  
-
-
-
 
 # 43 los NA o NULL --------------------------------------------------------
-#Na es la ausencia de datos.
-#df es la base de datos, en esta función buscamos hacer tambien cuente los NA
-#sin eliminar las filas de data set.
-
-filter(df, is.na(x)|x>2)
-
-
-
+  #Na es la ausencia de datos.
+  #df es la base de datos, en esta función buscamos hacer tambien cuente los NA
+  #sin eliminar las filas de data set.
+  
+  filter(df, is.na(x)|x>2)
+  eventosR1<-read_xlsx("S9/Listado de Eventos 28-02-2022.xlsx")
+  view(eventosR1)  
+  
+  EVCom<-select(eventosR1,Comunidad)
+  
+  #Contando todos los valores de NA en una data frame
+  
+  EvComNA<-sum(is.na(EVCom)) /count(EVCom)
+  
+  #Cantidad de Na que existena en la base da datos.
+  print(EvComNA)
+  
+  #Porcentaje de incidencia de los NA en la base de datos
+  EvComNA<-sum(is.na(EVCom)) /count(EVCom)
+  print(EvComNA)  *100
+  
+  
 
 # 44 ordenando filas con arrage -----------------------------------------
 
-#ver las priemras 6 filas
-head(flights)
+  #ver las priemras 6 filas
+  head(eventosR1)
+  head(EVCom)
 
-#ver las 6 ultimas filas
-tail(flights)
+  #ver las 6 ultimas filas
+  tail(eventosR1)
 
-# ordendando descendente, aqui es por la ordenas por la 
-#columan arr_delay
-
-arrange(flights, desc(arr_delay))
-
-# los NA siempre quedara de último.
+  # ordendando descendente, aqui es por la ordenas por la 
+  #Ordenando la columan comunidad de forma ascendente
+  
+  arrange(EVCom, Comunidad)
+  
+  #Ordenando de forma descendente
+  arrange(EVCom, desc(Comunidad))
+  
+  print(EVCom)
+  
+  # los NA siempre quedara de último.
 
 
 
