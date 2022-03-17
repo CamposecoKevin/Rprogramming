@@ -68,15 +68,16 @@ view(HUE)
   #df es la base de datos, en esta función buscamos hacer tambien cuente los NA
   #sin eliminar las filas de data set.
   
+  
   filter(df, is.na(x)|x>2)
-  eventosR1<-read_xlsx("S9/Listado de Eventos 28-02-2022.xlsx")
+  eventosR1<-read_xlsx("Listado de Eventos 28-02-2022.xlsx")
   view(eventosR1)  
   
   EVCom<-select(eventosR1,Comunidad)
   
   #Contando todos los valores de NA en una data frame
   
-  EvComNA<-sum(is.na(EVCom)) /count(EVCom)
+  EvComNA<-sum(is.na(EVCom))
   
   #Cantidad de Na que existena en la base da datos.
   print(EvComNA)
@@ -84,6 +85,9 @@ view(HUE)
   #Porcentaje de incidencia de los NA en la base de datos
   EvComNA<-sum(is.na(EVCom)) /count(EVCom)
   print(EvComNA)  *100
+  
+  
+  
   
   
 
@@ -110,25 +114,87 @@ view(HUE)
 
 
 
+# 45 filtrar columans con *SELECT* ------------------------------------------
+  eventosR1
+  
+  
+  TecDep<-select(eventosR1, Tecnico, Departamento)
+  
+  #Para seleccionar un conjunto de columnas se usa :, ejemplo
+  
+  #Seleccionar columans desde IDtecnico hast comunidad
+  idCom<-select(eventosR1, idTecnico:Comunidad)
+  
+  idCom
+  
+  #Pero si necesido excluir alguna columan solo debo colocar un -
+  IdNo<-select(eventosR1, -(idTecnico))
+
+  #Seleción que contiene, con contains,
+  Muni<-select(eventosR1, contains("Muni"))
+
+  Muni
+  
+  
+
+# 46 Renombrar y ordenar las columnas -------------------------------------
+
+  rename(Muni,  Munis = Municipio)
+  
+  #Encontrar la frecuencia de la participiación de los municipios
+  #Y cambiar el nombre de la columna.
+  Munis<-data.frame(table(Muni$Municipio)) 
+  Munis<-rename(Munis, Municipio = Var1, Cantidad = Freq)
+  Munis<-arrange(Munis, desc(Cantidad))
+  
+  Munis
+  
+  #Promedio de actividades
+  mean(Munis$Cantidad)
+  
+  
+  #Ordenando columna, identificadon las variables a estudiar.
+  
+  OrdenColum<-select(eventosR1,Tecnico, Departamento, `Tipo de Evento`, everything() )
+  
+  eventosR1
+  
+  view(OrdenColum)
 
 
-
-# 45 filtrar columans con select ------------------------------------------
-
-
-select(flights, dep_time:arr_delay)
-
-
-
-
-# 47 calcular nuevas variables con MUTATE ---------------------------------
-
-flights_new <- select(flights,
-                      year:day,
-                      ends_with("delay"),
-                      distance,
-                      air_time
-                      )
+# 47 calcular nuevas variables con MUTATE Y TRANSMUTE ---------------------------------
+  
+  #Seleccionar variables a estudiar
+  NewEventoR1 <- select(eventosR1,
+                        Tecnico, 
+                        Departamento,
+                        `Participantes (Sin Personal Proyecto)`)
+  NewEventoR1<-rename(NewEventoR1, participantes =`Participantes (Sin Personal Proyecto)`)
+  
+  view(NewEventoR1)
+  
+  #Nueva columna, Por actividad se establecido que
+  #el 30% son nuevos productores registrados
+  #en agricontrol
+  
+  EventoNuevo<-mutate(NewEventoR1,
+                      NuevoProductor = round(participantes*.20))
+  
+  view(EventoNuevo)
+  
+  #Nuevo productores ingresados
+  sum(EventoNuevo$NuevoProductor)
+  
+  #Transmute, solo quedarse con los calculados
+  EventoNewTrans<-transmute(NewEventoR1,
+                     NuevoProductor30 = round(participantes*.20),
+                     NuevoProductor40 = round(participantes*.30),
+                     NuevoProductor50 = round(participantes*.40))
+  
+  
+  #Visualización de solo los calculados
+  view(EventoNewTrans)
+  
 
 #here creat new column call "time_gain" and "flight_speed"
 
