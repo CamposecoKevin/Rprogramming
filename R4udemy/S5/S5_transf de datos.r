@@ -4,6 +4,15 @@ library(tidyverse)
 library(nycflights13)
 view(nycflights13)
 View(flights)
+library(writexl)
+library(readxl)
+
+
+
+
+# Base de datos a analizar y asiganciónd variable--------------------------
+
+eventosR1<-read_xlsx("Listado de Eventos 28-02-2022.xlsx")
 
 
 
@@ -195,34 +204,96 @@ view(HUE)
   #Visualización de solo los calculados
   view(EventoNewTrans)
   
-
-#here creat new column call "time_gain" and "flight_speed"
-
-mutate(flights_new,
-       time_gain = arr_delay - dep_delay,
-       flight_speed = distance/(air_time/60)
-       )
-
-
+  
 
 
 # 48. Funciones utilies para mutar lps datps ------------------------------
   #operaciones aritmeticas : +,-,*,/,
 
+  #Agragados de funciones
+  #                      x/sum(x): proporcion sobre el total
+  
+  
+  #Aritmetica modular
+                    #%/% es igual cociente de la división entera
+                    #%% el resto de la división
+
+  
+  #Logaritmos log() base e, log2(), log10().
+  
+  
+  #Offsets; lead(), mueve hacia la izquierda.
+  #lag() = mueve hacia la derecha
+  
+  
+  #Funciones acumulativas:
+  #cunsum()
+  #cumprod()
+  #comnin()
+  #commean()
+  
+  #Comparaciones lógicas
+  #>,<, <=, >=, ==, !=.
+  
+  #Ranking: min_rank() se ordena de mayor a menor
+  #min_rank(desc())
+  #row_number(), no hay repeticiones
+  #dense_rank(), si hay repeticiones
+  #percent_rank(), 
+  #come_dist(),
+  #ntile(), se orden por cuartiles
+  
+  
   
 
+  
+  
 
+# 49 resumen de variables agrupadas ---------------------------------------
+  #Summarise
+  
+  summarise(NewEventoR1, 
+            XParticipante = mean(participantes, 
+                                 na.rm = T))
 
+  #Agrupando por Munis,
+  grup_por_muni<-group_by(NewEventoR1,
+                          Departamento)
+  
+  #agrupando por munis y tecnico
+  TecnicoMuniGrupo<-group_by(NewEventoR1,
+                          Departamento, Tecnico)
+  
+  
+  
+  #promedio por munis
+  MuniTec<-summarise(grup_por_muni, 
+            PromedioMunis = mean(participantes, 
+                                 na.rm = T))
+  
+  #Promedio por munis, y tecnico
+  DepGrup<-summarise(TecnicoMuniGrupo, 
+            PromedioMunisTecnico = mean(participantes, 
+                                 na.rm = T)) 
 
+  view(munigrupoTec)
 
+  #Encontrando el maximo y minumo
+  
+  max(DepGrup$PromedioMunisTecnico)
+  min(DepGrup$PromedioMunisTecnico)
 
+  select(DepGrup, PromedioMunisTecnico == 31)
 
+  #Con la función mapply podré encontrar quien es fue mayor o menor
+  mapply(max,DepGrup)
+  mapply(min,DepGrup)
 
+  
+  
 
-
-
-
-
+  
+  
 
 
 
