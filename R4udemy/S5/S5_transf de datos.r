@@ -4,15 +4,17 @@ library(tidyverse)
 library(nycflights13)
 view(nycflights13)
 View(flights)
-library(writexl)
+
 library(readxl)
 
+install.packages("writexl")
+library(writexl)
 
 
 
 # Base de datos a analizar y asiganciónd variable--------------------------
 
-eventosR1<-read_xlsx("Listado de Eventos 28-02-2022.xlsx")
+eventosR1<-read_xlsx("/R/Rprogramming/R4udemy/S9/Listado de Eventos 28-02-2022.xlsx")
 
 
 
@@ -246,9 +248,6 @@ view(HUE)
   
   
 
-  
-  
-
 # 49 resumen de variables agrupadas ---------------------------------------
   #Summarise
   
@@ -292,21 +291,228 @@ view(HUE)
   
   
 
+# 50 Los pipes %% ---------------------------------------------------------
+  
+  #Agrupado por tecnico
+  grup_tecnico<-group_by(eventosR1, Tecnico)
+  
+  
+  analisisTecnico<-summarise(grup_tecnico,
+                             Cantidad = n(),
+                             MeanParticipantes = mean(`Participantes (Sin Personal Proyecto)`) )
+
+  view(analisisTecnico)  
+  
+  # Identificar el promedio
+  MeanEvento<- mean(eventosR1$`Participantes (Sin Personal Proyecto)`)
+    
+  print(MeanEvento)
+  
+  
+  
+  #Elimnar un tecnico que no es necesario para el analisis
+  ATecnico<-filter(analisisTecnico, Cantidad >=13, Tecnico !="Adolfo Torres Ixcoy")
+
+  print(ATecnico)
+
+  view(ATecnico)
+
+  
+  #Hacer una función con pipes %>% es igual a entonces haz esto.
+  
+  grup_tecnicos <- eventosR1 %>%
+    group_by(Tecnico)%>%
+    summarise(
+      Cantidad = n(),
+      MeanParticipantes = mean(`Participantes (Sin Personal Proyecto)`)
+    )%>%
+    filter(Cantidad >= 13, Tecnico != "Adolfo Torres Ixcoy")
+
+  
+  
+  view(grup_tecnicos)
+
+
+
+
+
+# 51 Elimnar los NA de los datos ------------------------------------------
+
+  # na.rm = T 
+  # Ejemplo con NA
+  
+  MeanEvento<- mean(eventosR1$`Participantes (Sin Personal Proyecto)`, na.rm = T)
+  print(MeanEvento)
+
+  
+
+
+# 52. contar y visualizar resumenes correctamente -------------------------
+
+  CantidadDeEventos <- eventosR1 %>%
+    group_by(Tecnico)%>%
+    summarise(
+      Cantidad = n())
+
+  
+  print(CantidadDeEventos)  
+
+  #Grafica lineal
+  ggplot(data = CantidadDeEventos, mapping = aes(x = Cantidad))+
+    geom_freqpoly(binwidth = 5)
+  #gráfica histograma
+  ggplot(data = grup_tecnicos, mapping = aes(x = MeanParticipantes))+
+    geom_histogram(binwidth = 5)
+  #gráfica de puntos, con dos variables.
+  ggplot(data = grup_tecnicos, mapping = aes(x = Cantidad, y= MeanParticipantes))+
+    geom_point(alpha = 1)
+  
+  
+  
+  
+  
+
+# 53 El ejemplo del béisbol -----------------------------------------------
+  
+  view(Lahman::Batting)
+  
+  batting <- as_tibble(Lahman::Batting)
+  
+  batters <- batting %>%
+    group_by(playerID)%>%
+    summarise(hits = sum(H, na.rm =T),
+              bats = sum(AB, na.rm = T),
+              bat.average = hits/bats)
+  
+  
+  batters %>%
+    filter(bats > 100) %>%
+    ggplot(mapping = aes(x = bats, y = bat.average))+
+    geom_point()+
+    geom_smooth(se = F)
+  
+  #se = F, es para quitar el error estandar
+  
+  
+  
+  #Convertir un value en tibllbe
+  promedio <- as_tibble(MeanEvento)
   
   
 
 
+# 54- funciones estadísticas útiles ---------------------------------------
+
+  # medidas de centralización
+  
+  #Encontrando el promedio, media, ds
+  
+  GrupoTecnicos <- eventosR1 %>%
+    group_by(Tecnico)%>%
+    summarise(
+      Cantidad = n(),
+      Mean= mean(`Participantes (Sin Personal Proyecto)`),
+      Mediana= median(`Participantes (Sin Personal Proyecto)`)) %>%
+    filter(Mean > 13) %>%
+    arrange(desc(Mean))
+  
+
+    view(GrupoTecnicos)  
+
+    # Medidas de disperción
+    
+    GrupoTecnicos <- eventosR1 %>%
+      group_by(Tecnico)%>%
+      summarise(
+        Cantidad = n(),
+        iqr= IQR(`Participantes (Sin Personal Proyecto)`),
+        mad= mad(`Participantes (Sin Personal Proyecto)`),
+        Desviación = sd(`Participantes (Sin Personal Proyecto)`)) %>%
+      arrange(desc(Desviación))
+  
+
+    view(GrupoTecnicos) 
+  
+  #Medidas de orden
+    
+    GrupoTecnicos <- eventosR1 %>%
+      group_by(Tecnico)%>%
+      summarise(
+        Cantidad = n(),
+        Minimo= min(`Participantes (Sin Personal Proyecto)`),
+        Q1= quantile(`Participantes (Sin Personal Proyecto)`, 0.25),
+        Mediana = quantile(`Participantes (Sin Personal Proyecto)`, 0.5),
+        Q3 = quantile(`Participantes (Sin Personal Proyecto)`, 0.75),
+        Maximo= max(`Participantes (Sin Personal Proyecto)`),) %>%
+      arrange()
+  
+    view(GrupoTecnicos)
+  
+  #Función de conteo
+    
+    flights %>%
+      group_by(dest)%>%
+      summarise(
+        Cantidad = n(), # aqui tomara igual los na
+        Empresa = n_distinct(carrier),
+        Viajes = sum(!is.na(arr_dalay))#Eliman todo los na
+      )%>%
+      arrange(desc(carries))
+  
+  
+
+# 55 agrupaciones múltiples y desagrupaciones -----------------------------
+
+  daily <- group_by(flights, year, month, day)
+  
+  view(daily)  
+  
+  #Conteo de vuelso por días  
+  (per_day <- summarise(daily, No.Vuelos = n()))
+  #Conteo de vuelos por mes
+  (per_month <- summarise(per_day, No.Vuelos =sum(No.Vuelos)))
+  #Conteo de vuelos por año
+  (per_yaer <- summarise(per_month, No.Vuelos = sum(No.Vuelos)))
+  
+
+  #Usando la función ungrupe
+  #En esta función descae todo lo que se habia agrupado  
+  daily %>%
+    ungroup()%>%
+    summarise(No.Vuelos = n())
+  
+
+  
+  
+
+# 56 mutates y filter por segmento ----------------------------------------
+  
+  flights%>%
+    group_by(year, month, day)%>%
+    filter(rank(desc(arr_delay))<10) -> temp
+
+  view(temp)  
+  
+  popolar_dest <- flights %>%
+    group_by(dest)%>%
+    filter(n() > 365)
+  
+  view(popolar_dest)
+  
 
 
+  
 
 
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
