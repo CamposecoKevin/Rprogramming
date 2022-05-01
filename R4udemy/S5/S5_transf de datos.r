@@ -14,7 +14,7 @@ library(writexl)
 
 # Base de datos a analizar y asiganciónd variable--------------------------
 
-eventosR1<-read_xlsx("/R/Rprogramming/R4udemy/S9/Listado de Eventos 28-02-2022.xlsx")
+eventosR1<-read_xlsx("C:/Users/KEVIN CAMPOSECO/Documents/Kevin_Proyecto/Rprogramming/R4udemy/S9/Listado de Eventos 28-02-2022.xlsx")
 
 
 
@@ -254,6 +254,7 @@ view(HUE)
   summarise(NewEventoR1, 
             XParticipante = mean(participantes, 
                                  na.rm = T))
+  NewEventoR1
 
   #Agrupando por Munis,
   grup_por_muni<-group_by(NewEventoR1,
