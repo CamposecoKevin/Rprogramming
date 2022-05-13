@@ -10,7 +10,7 @@ View(flights)
 library(readxl)
 
 install.packages("writexl")
-library(writexl)
+library(writexl).
 
 
 
@@ -43,7 +43,7 @@ library(writexl)
   
   #visualización con de catégoricas de #tipo de evento#
     ggplot(data = eventosR1)+
-    geom_bar(mapping = aes(eventosR1$Departamento))
+    geom_bar(mapping = aes(eventosR1$Municipio))
   
   # conteo de las varia
   eventosR1 %>%
@@ -110,26 +110,133 @@ library(writexl)
   
   
   
+
+# 64- Reemplazan errores por NAS ------------------------------------------
+
+  good_diamonds <- diamonds%>%
+    mutate( y = ifelse(y < 2 | y>30, NA, y))
+  
+  view(good_diamonds)  
   
   
   
   
+
+# 65- la covariación a través de las densidades ---------------------------
+  
+  # categoria vs contínua
   
   
-  
-  
-  
-  
+  ggplot(data = diamonds, color = cut)+
+    geom_bar(mapping = aes(x = cut))
   
   
   
     
   
+  #Creando una tabla
+  Muni<-data.frame(table(eventosR1$Municipio))%>%
+    rename( Municipios = Var1, Cantidad = Freq)%>%
+    arrange(desc(Cantidad))%>%
+    filter(Cantidad > 21) 
+    
+  Muni
+  
+
+  #LA DENSIDAD EN LA CURVAS
+  
+  ggplot(data = diamonds, mapping = aes(x = price, y = ..density.. ))+
+    geom_freqpoly(mapping = aes(color = cut), binwidth = 500)
+  
+ 
+  
+
+# 66- la covariacina de factores  de boxplot ------------------------------
+  # el boxplot
+  # Empieza en el quartil 25, y termina en el quartil 75
+  # los bigotes,
+  
+  
+  ggplot( data = diamonds, mapping = aes(x = cut, y = price) )+
+    geom_boxplot()
+  
+  # gráfica de los coches, y un orden segun sumedia
+  
+  ggplot(data = mpg, mapping = aes(x = class, y = hwy))+
+    geom_boxplot()
+    
+  #ordenado
+  
+  ggplot(data = mpg, mapping = aes(x = reorder(class, hwy, FUN = median), y = hwy))+
+    geom_boxplot()
+  
+    
+
+# 67- la covariancia de factores a través de heatmaps ---------------------
+
+  
+  ggplot(data = diamonds)+
+    geom_count(mapping = aes(x = cut, y = color) )
+  
+  
+  diamonds%>%
+    count(color, cut)
+
+  eventosR1%>%
+    count(Departamento,Municipio)%>%
+    arrange(desc(n)) -> municipioR1
+  
+  municipioR1
+  
+  ggplot(data = municipioR1,mapping =  aes(x= Municipio, y = Departamento))+
+    geom_tile(mapping = aes(fill =n))
+  
+  
+  ggplot(data = municipioR1)+
+    geom_bar(mapping = aes(municipioR1$n))
   
   
   
+
+# 68- covariancia de variables continuas con scatterplots -----------------
   
   
+
+
+# 69- visualización de patrones -------------------------------------------
+  # * Coincidencias,
+  # * Relaciones que implica el patrón?
+  # * fuerza de la relación
+  # * otras variables afectadas
+  # * subgrupos
   
+  
+  #Erupciones y minutos
+  ggplot(data = faithful)+
+    geom_point(mapping = aes(x = eruptions, y =waiting))
+  
+  install.packages("modelR")
+  library(modelr)
+  
+  #Creación de modelos
+  
+  mod<-lm(log(price) ~(carat), data = diamonds)
+  mod  
+  
+  diamod_pred <- diamonds %>%
+    add_residuals(mod)%>%
+    mutate(res = exp(resid))
+  
+
+
+# 70- una reflexión sobre la sintaxis de tidiverse ------------------------
+  #simplificando la sitaxis de ggplot.
+  
+  diamonds%>%
+    count(cut, clarity)%>%
+    ggplot(aes(clarity, cut, fill = n))+
+    geom_tile()
+  
+
   
   
