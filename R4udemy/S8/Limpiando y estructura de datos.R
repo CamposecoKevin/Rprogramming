@@ -47,6 +47,9 @@ setwd("C:/Users/KEVIN CAMPOSECO/Mis documentos/Kevin_Proyecto/Rprogramming/R4ude
 
 
 
+
+
+
   
   
 
