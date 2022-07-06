@@ -1,4 +1,11 @@
 
+
+# Space to work ------------------------------------------------------
+
+setwd("C:/Users/KEVIN CAMPOSECO/Mis documentos/Kevin_Proyecto/Rprogramming/R4udemy/S8/")
+
+# packages to use ---------------------------------------------------------
+
 library(tidyverse)
 library(readxl)
 library(writexl)
@@ -6,7 +13,6 @@ library(writexl)
 
 
 # 89- fichero de datos limpio ---------------------------------------------
-
 
 View(population)
 
@@ -25,23 +31,26 @@ poblacion %>%
   
 # 90-Spreading y gathering ------------------------------------------------
 
-eventos<- read_csv("C:/Users/KEVIN CAMPOSECO/Downloads/Eventos_20220525_204426/query_1.csv")
+#Estrucutra de limpieza de datos
+#Que es una variable y observación
+#fila y columnas
 
 
 
-view(eventos)
-
-str(eventos)
-
-rogelio <- eventos %>%
-  filter(eventos$`Id Técnico` == 137)
-
-view(rogelio)
-
-write_csv(eventos, "eventos.csv")
+# 91-técnica de gathering ----------------------------------------------------
 
 
-setwd("C:/Users/KEVIN CAMPOSECO/Mis documentos/Kevin_Proyecto/Rprogramming/R4udemy/S8/")
+
+
+
+
+
+
+
+
+
+
+
 
 
 
