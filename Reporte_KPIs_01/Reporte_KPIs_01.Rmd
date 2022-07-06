@@ -1,0 +1,84 @@
+---
+title: Reporte impacto covid-19 al Sistema Financiero
+author: Kevin Camposeco, CFA 
+date: \today
+params:
+  logo: logo.png
+  cover: cover.png
+  iblue: 2b4894
+  igray: d4dbde
+documentclass: article
+fontsize: 12
+papersize: a4paper
+output: 
+  IReports::businessReport:
+    keep_tex: TRUE
+    latex_engine: xelatex
+    resetStyleFiles: FALSE
+header-includes:
+  - \newcommand{\logo}{`r gsub("_", "\\_", params$logo)`}
+  - \newcommand{\cover}{`r gsub("_", "\\_", params$cover)`}
+  - \newcommand{\iblue}{`r params$iblue`}
+  - \newcommand{\igray}{`r params$igray`}
+include-before:
+  - \renewcommand{\contentsname}{}
+  - \renewcommand{\pagename}{Página}
+---
+
+
+
+```{r setup, include = FALSE}
+# packages
+library(dplyr)
+library(knitr)
+library(xtable)
+
+# settings
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+\maketitle
+\tableofcontents
+\addcontentsline{toc}{section}{Contents}
+\clearpage
+
+\section{Introducción}
+Luego de la entrada de Covid-19 en Guatemala a inicios de marzo del 2020, Guatemala se preparaba para enfrentar las repercusiones que supondría para su economía por las medidas extremas como el estado de sitio que permitió que las familias guatemaltecas se refugiaran en sus hogares para cuidarse de una pandemia que sin saber se extendería. Estas medidas extremas no solo interrumpían la cadena de suministro, el comercio, la vida cotidiana sino también en especial el sistema financiero, por lo partiremos en analizar ¿Cómo impacto el covid-19 en el sistema financiero en Guatemala?
+
+\subsection{Desarrollo}
+Impacto 1: Cambio en la tasa de interés líder del banco de Guatemala. Antes de la pandemia el Banco de Guatemala mantenía la tasa líder en 2.75 desde Ene- 2018 hasta Feb-2020 principalmente como una de sus actividades de mantener la política monetaria. Inicios de Marzo para mantener la regulación monetaria y lo niveles de precio anticipándose del impacto de la entrada de Covid-19 disminuye la tasa de interés líder a 2, una disminución de .75 puntos porcentuales. Y a medida que el tiempo pasa y los casos de Covid-19 aumentan la tasa de interés siguen bajando hasta llegar a 1.75 puntos porcentuales el mes de junio 2020, el cual significo una disminución del 1 punto porcentual. Una medida utilizada por la gran masa monetaria en circulación ya sea por el aporte social, bono 14 en su momento, y las nuevas emisiones.
+\
+Impacto 2: Los bancos, cambios en su tasa de interés, a medida que los programas sociales, incentivos, salarios, los bancos se preparaban para mantener liquidez para poder subsanar la gran de manda de efectivo. El banco de Guatemala cuando disminuye la tasa líder los bancos del sistema tiene mayor oportunidad de préstamo de dinero con una menor tasa para tener más liquidez para lograr con la demanda de dinero. También esto supone que los bancos puedan prestar con una menor tasa de interés para que las empresas ya sea puedan subsanar los salarios con créditos revolventes, inyectar capital a inversionista para llevar a cabo proyectos que antes no eran rentables.
+ 
+
+\section{Conclusión}
+La política monetaria que el banco de Guatemala supo implementar, contribuyo no solo en dar oportunidad a los bancos a contar con liquidez para subsanar la demanda de efectivo por parte de los guatemaltecos, sino también coadyuvo en una menos inflación 
+
+
+
+```{r results = "asis"}
+tab <- xtable(head(iris, n = 20), align = "|C|C|C|C|C|C|")
+
+addtorow <- list()
+addtorow$pos <- list()
+addtorow$pos[[1]] <- -1
+addtorow$command <- c("\\rowcolor{igray}")
+
+print(tab,
+      include.rownames = FALSE,
+      tabular.environment = "tabularx",
+      width = "\\textwidth",
+      comment = FALSE,
+      add.to.row = addtorow)
+```
+
+\begin{abstract}
+These are guidelines for preparing papers for the \emph{Journal of
+Electrical Bioimpedance}. The journal accepts original research
+papers and review articles within the broad field of electrical
+bioimpedance. Use this document as a template if you are using
+\LaTeX; otherwise, use this document as an
+instruction set. The paper size is A4 (21 × 29.7\,cm).
+
+
+
