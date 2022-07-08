@@ -78,6 +78,11 @@ with(poblacion, plot(year, population))
 state <- data.frame(state.x77, region = state.region)
 xyplot(Life.Exp ~ Income | region, data = state, layout = c(4,1))
 
+#
+par("lty")
+
+
+# 04- Base Plotting System (part 2) ---------------------------------------
 
 
 
