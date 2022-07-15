@@ -84,12 +84,64 @@ par("lty")
 
 # 04- Base Plotting System (part 2) ---------------------------------------
 
+install.packages("swirl")
+
+mpg
+
+ggplot(data = mpg, aes(x = cty, y = hwy), geom_point())
 
 
 
+# 02.4- Base Plotting Demonstration ---------------------------------------
+
+x <- rnorm(100)
+hist(x)
+
+y <- rnorm(100)
+plot(x = y, y = x, pch = 4)
+title("Gráfica de puntos")
+legend("topleft", legend = "Data")
+legend("topleft", legend = "Data", pch = 4)
+fit <- lm(y ~ x)
+abline(fit)
+abline(fit, lwd=3)
+#Nota: para hacer un plot, ambas varialbes deben tener las mismas cantidades
+
+z<-rnorm(100)
+# creando gráficas en dos
+par(mfrow = c(2,1))
+plot(x, y, pch = 20)
+plot(x, z, pth = 19)
+par("mar")
+
+#2  gráficos en horizontal
+par(mar = c(2,2,1,1))
+plot(x, y, pch = 20)
+plot(x, z, pth = 20)
+
+#2 gráficos en vertical
+par(mfrow = c(1,2))
+plot(x, y, pch = 20)
+plot(x, z, pth = 20)
+
+#2 gráficos con mas espacios en cada lado
+par(mar = c(4,4,2,2)) # para ajustar el margen
+par(mfrow = c(1,2))
+plot(x, y, pch = 20)
+plot(x, z, pth = 20)
 
 
+# graficando por segemendos
+g <- gl(2, 50, labels = c("Male", "Female"))
 
 
+par(mfrow = c(1,1)) #Sirve para devolver el plano a 1 sola gráfica
+
+plot(x,y)
+plot(x,y, type = "n", xlab = "Hombres", ylab = "Mujeres")
+
+points(x[g == "Male"], y[g== "Female"], col= "Red")
+points(x[g == "Female"], y[g== "Male"], col= "Blue", pch = 19)
+title("Relación altura mujeres y hombres")
 
 
