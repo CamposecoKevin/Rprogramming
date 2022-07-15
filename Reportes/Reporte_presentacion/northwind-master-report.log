@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.30)  4 JUL 2022 10:59
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.30)  14 JUL 2022 13:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -784,7 +784,7 @@ Package fontspec Info: Font family 'OpenSans(0)' created for font 'Open Sans'
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 9.08484pt on input line 108.
+(Font)              scaled to size 9.08484pt on input line 95.
 
 Package fontspec Info: Open Sans scale = 0.8296631331713706.
 
@@ -822,9 +822,9 @@ Package fontspec Info: Font family 'OpenSans(1)' created for font 'Open Sans'
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/OpenSans(1)/m/n on input line 108.
+(Font)                  OT1/lmss/m/n --> TU/OpenSans(1)/m/n on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/OpenSans(1)/bx/n on input line 108.
+(Font)                  OT1/lmss/bx/n --> TU/OpenSans(1)/bx/n on input line 95.
 (c:/Users/Kevin Camposeco/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
 \col@sep=\dimen325
@@ -837,26 +837,26 @@ Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
 ) (./northwind-master-report.aux)
 \openout1 = `northwind-master-report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -891,7 +891,7 @@ LaTeX Font Info:    ... okay on input line 128.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 128.
+Package hyperref Info: Link coloring OFF on input line 115.
 (./northwind-master-report.out) (./northwind-master-report.out)
 \@outlinefile=\write5
 \openout5 = `northwind-master-report.out'.
@@ -910,15 +910,15 @@ Dictionary: translator-numbers-dictionary, Language: English
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 128.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 128.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 128.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 128.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 115.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 128.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 115.
 
 Package fontspec Info: latinmodern-math scale = 1.03015890977869.
 
@@ -944,7 +944,7 @@ Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 11.28015pt on input line 128.
+(Font)              scaled to size 11.28015pt on input line 115.
 
 Package fontspec Info: latinmodern-math scale = 1.03015890977869.
 
@@ -976,15 +976,15 @@ Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 11.28015pt on input line 128.
+(Font)              scaled to size 11.28015pt on input line 115.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 128.
+(Font)              `operators' in the math version `normal' on input line 115.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 128.
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 115.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 128.
+(Font)              `operators' in the math version `bold' on input line 115.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 128.
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 115.
 
 Package fontspec Info: latinmodern-math scale = 1.03015890977869.
 
@@ -1063,13 +1063,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 128.
+(Font)              `symbols' in the math version `normal' on input line 115.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 128.
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 115.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 128.
+(Font)              `symbols' in the math version `bold' on input line 115.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 128.
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 115.
 
 Package fontspec Info: latinmodern-math scale = 1.03015890977869.
 
@@ -1130,88 +1130,33 @@ Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             =6.7681pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 128.
+(Font)              `largesymbols' in the math version `normal' on input line 115.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 128.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 115.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 128.
+(Font)              `largesymbols' in the math version `bold' on input line 115.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 128.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 115.
 (./northwind-master-report.nav)
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 4.978pt on input line 128.
+(Font)              scaled to size 4.978pt on input line 115.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 6.63733pt on input line 128.
+(Font)              scaled to size 6.63733pt on input line 115.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 11.94717pt on input line 129.
+(Font)              scaled to size 11.94717pt on input line 116.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
-(Font)              scaled to size 11.83908pt on input line 129.
+(Font)              scaled to size 11.83908pt on input line 116.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 8.29666pt on input line 129.
+(Font)              scaled to size 8.29666pt on input line 116.
 
-Overfull \vbox (44.16545pt too high) detected at line 129
+Overfull \vbox (44.16545pt too high) detected at line 116
  []
 
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 3.31866pt on input line 129.
+(Font)              scaled to size 3.31866pt on input line 116.
 [1
 
-]
-\openout4 = `northwind-master-report.vrb'.
-
-(./northwind-master-report.vrb
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.8961pt on input line 5.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.64008pt on input line 5.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5.
-(c:/Users/Kevin Camposeco/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 11.28131pt on input line 5.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.89691pt on input line 5.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.64066pt on input line 5.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.27914pt on input line 5.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.8954pt on input line 5.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.63957pt on input line 5.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
-(c:/Users/Kevin Camposeco/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
-(c:/Users/Kevin Camposeco/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
-(Font)              scaled to size 9.00262pt on input line 7.
-)
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 9.956pt on input line 150.
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/b/n' will be
-(Font)              scaled to size 9.8659pt on input line 150.
-
-Overfull \vbox (16.54619pt too high) detected at line 150
- []
-
-[2
-
-]
-\openout4 = `northwind-master-report.vrb'.
-
-(./northwind-master-report.vrb
-File: northwind-master-report_files/figure-beamer/pressure-1.pdf Graphic file (type pdf)
-<use northwind-master-report_files/figure-beamer/pressure-1.pdf>
-)
-Overfull \vbox (88.46803pt too high) detected at line 159
- []
-
-[3
+] [2
 
 ]
 \tf@nav=\write6
@@ -1228,12 +1173,12 @@ Package rerunfilecheck Info: File `northwind-master-report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31269 strings out of 477881
- 670609 string characters out of 5845029
- 1065296 words of memory out of 5000000
- 51575 multiletter control sequences out of 15000+600000
- 472874 words of font info for 70 fonts, out of 8000000 for 9000
+ 31154 strings out of 477881
+ 667175 string characters out of 5845029
+ 1060220 words of memory out of 5000000
+ 51501 multiletter control sequences out of 15000+600000
+ 470007 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,13n,122p,1912b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on northwind-master-report.pdf (3 pages).
+Output written on northwind-master-report.pdf (2 pages).
