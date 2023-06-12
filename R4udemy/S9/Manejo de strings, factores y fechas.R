@@ -60,6 +60,137 @@ str_c("hola",  str_replace_na(x) , "adios", sep = " ")
 
 # 114 las bases de las expresiones regulares ------------------------------
 
+#str_view()
+#str_view_all()
+
+
+x <- c('manzana', 'banana', 'pera', 'piña')
+
+install.packages("htmlwidgets")
+
+library(htmlwidgets)
+library(tidyverse)
+
+
+str_view(x, '.a.')
+str_view(x, 'na')
+#localizar un bacslash
+backlash <- '\\\\'
+writeLines(backlash)
+str_view('a\\b', '\\\\')
+
+
+# 115 anclas y caracteres de clase ----------------------------------------
+
+y <- c('tarta de manzana', 'manzana', 'manzana al horno')
+
+str_view(y, '^manzana$')
+
+
+# \b  localizar la frontera de una palabra
+
+# \d  localizar cualquier dígito
+# \s  cualquier espacio en blanco
+
+
+
+
+# 116 repeticiones de grupos y referencias --------------------------------
+
+#  ? -> 0 o 1
+#  + -> 1 o + veces
+#  * -> 0 o mas veces
+
+xx <- "El año 188 es l mas largo en  número s romaso: MDCCCLXXXCIII"
+str_view(xx, "CC?")
+str_view(xx, "CC+")
+str_view(xx, "CC*")
+str_view(xx, "CC[LX]+")
+
+
+
+str_view(fruit, '(..)\\1')
+
+
+# 117. Encontrar y extraer coincidencias de la expresión regular ----------
+
+
+#otras herramientas
+
+#Encontrar palabras en el lugar
+str_detect(fruit, 'a')
+cantidad
+sum(str_detect(words, '^j'))
+#promedio
+mean(str_detect(words, '^j'))
+
+
+sum(!str_detect(words, '[aeiou]'))
+
+
+
+
+df <- tibble(
+  word = words,
+  i = seq_along(word)
+)
+
+view(df)
+
+
+df %>% filter(str_detect(words,'x$'))
+
+
+
+# 118. Agrupaciones y reemplazos de strings -------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
