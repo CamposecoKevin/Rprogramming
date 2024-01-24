@@ -42,6 +42,29 @@ mtcars %<>%
 # 137 cuando conviene crear funciones -------------------------------------
 
 
+# 138 funciones para humanos y ordenadores --------------------------------
+# que el nombre de la función se entienda
+
+
+
+# 139 condiciones y toma de decisiones ------------------------------------
+
+if (condicion){
+  # condigo a ejecutar si es Trues
+} else{
+  # condigo a ejecutar si es falso
+}
+
+y <- 10
+
+if (y<20) {
+  x <- "numero grande"
+} else{
+  x <- "numero pequeño"
+}
+
+
+# 140 argumentos de las funciones -----------------------------------------
 
 
 
